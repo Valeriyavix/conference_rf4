@@ -1,0 +1,12 @@
+<%- include('header', { title: 'Мои заявки' }) %>
+<h1><%= title %></h1>
+<p>Пользователь: <%= typeof user !== 'undefined' ? user.fio : '' %></p>
+
+<h2>Заявки:</h2>
+<ul>
+    <% requests.forEach(item => { %>
+        <li><%= item.room_name %> — <%= item.status %></li>
+    <% }) %>
+</ul>
+
+<%- include('footer') %>

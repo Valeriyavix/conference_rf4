@@ -1,0 +1,20 @@
+<%- include('header',{title:'Регистрация'}) %>
+<h1><%= title %></h1>
+<form method="POST" action="/register">
+    <input name="login" placeholder="Логин">
+    <input name="password" type="password" placeholder="Пароль">
+    <input name="fio" placeholder="ФИО">
+    <input name="phone" placeholder="Телефон">
+    <input name="email" placeholder="Email">
+    <button>Зарегистрироваться</button>
+</form>
+
+<% if (user) { %>
+    <h2>Введенные данные:</h2>
+    <p>Логин: <%= user.login %></p>
+    <p>ФИО: <%= user.fio %></p>
+    <p>Телефон: <%= user.phone %></p>
+    <p>Email: <%= user.email %></p>
+<% } %>
+
+<%- include('footer') %>
